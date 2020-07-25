@@ -1,0 +1,21 @@
+#! /bin/bash
+
+#Author: Nawaz Attar
+#Craeted On : 25th July 2020
+#Purpose:script to append any text in a file
+
+echo -e "Enter the Filename: \c"
+read file_name
+
+if [ -f $file_name ]
+then
+if [ -w $file_name ]
+then
+echo "Type some text and for exit, press ctrl+d"
+cat >> $file_name
+else
+echo "$file_name File dont have the write permission"
+fi
+else
+echo "$file_name does not exist"
+fi
